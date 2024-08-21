@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "debug": "ndb server.js",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "server": "node server.js"
   },
   "author": "Moath Shreim",
   "license": "ISC",

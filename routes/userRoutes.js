@@ -7,7 +7,7 @@ const userController = require('../controllers/userController');
 
 
 
-router.delete('/deleteMe', userController.deleteMe);
+
 router.post('/addUser',userController.addUser)
 
 

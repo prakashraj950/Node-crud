@@ -9,7 +9,7 @@ exports.deleteOne = Model => async (req, res, next) => {
             return next(new AppError(404, 'fail', 'No document found with that id'), req, res, next);
         }
 
-        res.status(204).json({
+        res.status(200).json({
             status: 'success',
             data: null
         });
@@ -31,6 +31,7 @@ exports.updateOne = Model => async (req, res, next) => {
 
         res.status(200).json({
             status: 'success',
+            message: "Data updated successfully",
             data: {
                 doc
             }
@@ -43,7 +44,6 @@ exports.updateOne = Model => async (req, res, next) => {
 
 exports.createOne = Model => async (req, res, next) => {
     try {
-        console.log(req.body, 'req');
 
         const doc = await Model.create(req.body);
 
@@ -51,7 +51,8 @@ exports.createOne = Model => async (req, res, next) => {
             status: 'success',
             data: {
                 doc
-            }
+            },
+            message: 'Data added successfully'
         });
 
     } catch (error) {
@@ -62,6 +63,7 @@ exports.createOne = Model => async (req, res, next) => {
 exports.getOne = Model => async (req, res, next) => {
     try {
         const doc = await Model.findById(req.params.id);
+
 
         if (!doc) {
             return next(new AppError(404, 'fail', 'No document found with that id'), req, res, next);
@@ -74,7 +76,7 @@ exports.getOne = Model => async (req, res, next) => {
             }
         });
     } catch (error) {
-        next(error);
+        next(new AppError(404, 'error', 'No document found with that id'), req, res, next);
     }
 };
 
