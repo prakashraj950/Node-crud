@@ -2,10 +2,10 @@
 This project is a Node.js application using Express.js for the back-end API. It connects to a MongoDB database for data storage and includes error handling and validation features. The project is designed to be robust and scalable, with a focus on handling various types of errors gracefully.
 
 ## Features
-- RESTful API: Provides endpoints for CRUD operations.
-- MongoDB Integration: Connects to a MongoDB database for data storage.
-- Error Handling: Includes custom error handling for various types of errors.
-- Validation: Includes validation for input data using Mongoose.
+- `RESTful API`: Provides endpoints for CRUD operations.
+- `MongoDB Integration`: Connects to a MongoDB database for data storage.
+- `Error Handling`: Includes custom error handling for various types of errors.
+- `Validation`: Includes validation for input data using Mongoose.
 
 ## Project Structure
 ```
@@ -13,6 +13,7 @@ This project is a Node.js application using Express.js for the back-end API. It 
 node-express-project/
 │
 ├── controllers/               # Controllers for handling requests
+|   ├── baseController.js      # Base controller with common methods
 │   ├── userController.js      # User-related operations
 │   └── errorController.js     # Error handling
 │
@@ -22,7 +23,7 @@ node-express-project/
 ├── routes/                    # API route definitions
 │   └── userRoutes.js          # User routes
 │
-├── .env                       # Environment variables
+├── config.env                 # Environment variables
 ├── .gitignore                 # Git ignore file
 ├── app.js                     # Express app setup
 ├── server.js                  # Server configuration and start
@@ -82,7 +83,7 @@ npm start
 ## Error Handling
 ### The project includes custom error handling for:
 
-- CastError: Invalid data type or format
+<!-- - CastError: Invalid data type or format -->
 - ValidationError: Invalid input data
 - DuplicateKeyError: Duplicate field value
 
