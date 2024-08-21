@@ -50,7 +50,7 @@ cd Node-crud
 ```
 npm install 
 ```
-3. Create a .env file in the root directory and configure your environment variables:
+3. Create a `config.env` file in the root directory and configure your environment variables:
 
 ```
 DATABASE=mongodb://<username>:<password>@<cluster-url>/<db-name>
@@ -88,4 +88,4 @@ npm start
 
 ## Troubleshooting
 - Ensure `MongoDB` is running and accessible with the correct credentials.
-- Check the `.env` file for correct configuration.
+- Check the `config.env` file for correct configuration.
